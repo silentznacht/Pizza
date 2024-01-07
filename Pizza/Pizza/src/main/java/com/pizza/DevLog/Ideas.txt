@@ -1,0 +1,15 @@
+How will it work?
+
+    - Users are able to choose the pizzas size, toppings (up to 3), etc
+        - each pizza size and toppings have a price
+    
+    - Give users an option to order several pizzas
+        - each pizza can be diversified
+
+    - Prints out users bill and order
+
+
+    Menu:
+        Case 1: Test Result =?
+        Case 2: Test Tesult =?
+        Case 3: Test Result => Passed
