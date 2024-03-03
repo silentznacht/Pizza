@@ -9,7 +9,6 @@ public class App {
     static Scanner userChoice = new Scanner(System.in);
 
     // Stores all info (toppings and sizes) for user receipt 
-
     private static HashMap<String, Double> infoSaver = new HashMap<String, Double>();
     private static List<String> selectedToppings = new ArrayList<>();
     private static List<Double> selectedToppingPrices = new ArrayList<>();
@@ -33,9 +32,10 @@ public class App {
     static double largePie = (double) Sizes.largePie;
 
     // SizeArr, name and price
-
     static String[] sizeArr = Sizes.sizeArr;
     static double [] sizePrice = Sizes.sizePrice;
+
+    private static final double toppingMultiplier = (double) 1.25;
 
     static void toppings() { // displays user toppings
         System.out.println("            [Toppings]");
@@ -74,7 +74,7 @@ public class App {
                     sizeLoop = true;
                     infoSaver.put(sizeArr[i], tempBalanceS);
                     System.out.println(infoSaver);
-                    //chooseToppings(billBalance);
+                    chooseToppings(billBalance);
                     break;
                 }
             }
@@ -103,11 +103,18 @@ public class App {
                         selectedToppingPrices.add(toppingsPriceArr[i]);
 
                         // Debug info 
-                        System.out.println("Test: " + toppingsNameArr[i]);
+                        System.out.println(toppingCount + ". " + "Test: " + toppingsNameArr[i]);
                         System.out.println("Current Bill: " + billBalance);
-                        receiptGenerator(billBalance);
                         break;
                      } 
+
+                     if (toppingDetected) {
+                        chooseToppings(billBalance);
+                        toppingLoop = true;
+                        break;
+                    } 
+                    
+                    if (toppingCount > 3) {System.out.println("[EXCEEDED TOPPINGS]"); receiptGenerator(billBalance); toppingLoop = true; break;}
                 }
 
                 if (!toppingDetected) {System.out.println("Frank: Sorry that ain't a topping we serve here bud");}
@@ -124,7 +131,7 @@ public class App {
     }
     static void receiptGenerator(double billBalance) {
         System.err.println("Method in");
-        
+        printToppings(selectedToppings, selectedToppingPrices);
     }
 
     static void menu(boolean menuLoop) {
