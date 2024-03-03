@@ -4,7 +4,7 @@ Welcome to Frank's Pizza Ordering App! This text-based Java application allows u
 
 ## How to Use the App
 
-1. **Run the Application**: Compile and run the Java program `PizzaOrderingApp.java`.
+1. **Run the Application**: Compile and run the Java program `App.java`.
 2. **Navigate the Menu**: The app presents a menu with options to order pizza, check the menu, or exit.
 3. **Order Pizza**: Choose the "Order Pizza" option to select the pizza size and toppings. Follow the prompts to complete your order.
 4. **Check Menu**: Select the "Check Menu" option to view available toppings and their prices, as well as pizza sizes.
